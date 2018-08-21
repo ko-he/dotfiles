@@ -105,6 +105,8 @@ let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
 let g:auto_ctags_filetype_mode = 1
 set tags+=.git/tags;$HONE
 
+" tsuquyomi
+let g:tsuquyomi_javascript_support = 1
 
 """"""""""""""""""""""""""""""""
 " Key mapping
