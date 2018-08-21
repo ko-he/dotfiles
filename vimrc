@@ -116,6 +116,7 @@ inoremap <S-Tab> <Esc>
 vmap <S-Tab> <Esc>
 map <C-n> :NERDTreeToggle<CR>
 map <Space>p :Files<CR>
+map <Space>b :Buffers<CR>
 map <Space>a :Ag<CR>
 map <Space>t :TagbarToggle<CR>
 map <Space>l :bn<CR>
