@@ -55,6 +55,9 @@ Plug 'ianks/vim-tsx'
 " for linter
 " Plug 'w0rp/ale'
 
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""
