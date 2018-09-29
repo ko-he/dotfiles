@@ -91,3 +91,6 @@ source '/Users/Kohei/google-cloud-sdk/completion.zsh.inc'
 
 source '/Users/Kohei/.zsh_aliases'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
