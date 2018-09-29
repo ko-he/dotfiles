@@ -58,6 +58,9 @@ Plug 'ianks/vim-tsx'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" history
+Plug 'mbbill/undotree'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""
@@ -129,3 +132,4 @@ nnoremap <silent><C-g> :call fzf#vim#ag(expand('<cword>'))<CR>
 nnoremap x "_x
 nnoremap X "_X
 nnoremap D "_D
+nnoremap <C-h> :UndotreeToggle<CR>
