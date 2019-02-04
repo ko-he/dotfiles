@@ -31,6 +31,7 @@ Plug 'dyng/ctrlsf.vim'
 
 " -- Git ------------------
 Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/vim-diff-enhanced'
 
 " -- Ctags -----------------
 Plug 'soramugi/auto-ctags.vim'
@@ -47,6 +48,8 @@ Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
+Plug 'posva/vim-vue'
+
 " for ts
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
@@ -60,6 +63,11 @@ Plug 'editorconfig/editorconfig-vim'
 
 " history
 Plug 'mbbill/undotree'
+
+" PlantUml
+Plug 'aklt/plantuml-syntax'
+
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -114,6 +122,10 @@ set tags+=.git/tags;$HONE
 " tsuquyomi
 let g:tsuquyomi_javascript_support = 1
 
+" linter
+let g:ale_set_highlights = 0
+let b:ale_linters = {'ruby': ['rubocop'], 'nerdtree': ''}
+
 """"""""""""""""""""""""""""""""
 " Key mapping
 """"""""""""""""""""""""""""""""
@@ -127,6 +139,7 @@ map <Space>a :Ag<CR>
 map <Space>t :TagbarToggle<CR>
 map <Space>l :bn<CR>
 map <Space>h :bp<CR>
+map <C-Esc> :bd<CR>
 nnoremap <silent><C-i> :call fzf#vim#tags(expand('<cword>'))<CR>
 nnoremap <silent><C-g> :call fzf#vim#ag(expand('<cword>'))<CR>
 nnoremap x "_x
