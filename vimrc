@@ -33,10 +33,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'chrisbra/vim-diff-enhanced'
 
-" -- Ctags -----------------
-Plug 'soramugi/auto-ctags.vim'
-Plug 'majutsushi/tagbar'
-
 " -- colors ----------------
 Plug 'joshdick/onedark.vim'
 
@@ -111,13 +107,6 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
-
-" ctags
-let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git', '.svn']
-let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
-let g:auto_ctags_filetype_mode = 1
-set tags+=.git/tags;$HONE
 
 " tsuquyomi
 let g:tsuquyomi_javascript_support = 1
