@@ -1,0 +1,10 @@
+set refresh-mode = auto
+set split-view-width = 70%
+set main-view = id date author commit-title:graph=yes,refs=yes
+color  diff-header       default magenta
+color  diff-chunk        black   white
+
+bind status <Ctrl-r> ?git reset --hard HEAD
+bind status <Ctrl-p> !git push origin %(branch)
+bind status <Ctrl-P> !git push -u origin %(branch)
+bind generic <Ctrl-b> @hub browse

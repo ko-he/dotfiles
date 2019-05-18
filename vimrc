@@ -9,7 +9,6 @@ scriptencoding utf-8
 set et ts=2 sw=0
 set encoding=utf-8
 
-
 """"""""""""""""""""""""""""""""
 " Plugin
 """"""""""""""""""""""""""""""""
@@ -23,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 " -- files ----------------
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'francoiscabrol/ranger.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -52,7 +52,7 @@ Plug 'posva/vim-vue'
 
 " for ts
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 Plug 'ianks/vim-tsx'
 
 " for linter
@@ -66,8 +66,11 @@ Plug 'mbbill/undotree'
 
 " PlantUml
 Plug 'aklt/plantuml-syntax'
-
 Plug 'w0rp/ale'
+
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
@@ -120,12 +123,13 @@ let g:auto_ctags_filetype_mode = 1
 set tags+=.git/tags;$HONE
 
 " tsuquyomi
-let g:tsuquyomi_javascript_support = 1
+" let g:tsuquyomi_javascript_support = 1
 
 " linter
 let g:ale_set_highlights = 0
 let b:ale_linters = {'ruby': ['rubocop'], 'nerdtree': ''}
-
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
 """"""""""""""""""""""""""""""""
 " Key mapping
 """"""""""""""""""""""""""""""""
@@ -146,3 +150,9 @@ nnoremap x "_x
 nnoremap X "_X
 nnoremap D "_D
 nnoremap <C-h> :UndotreeToggle<CR>
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
