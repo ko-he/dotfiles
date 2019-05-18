@@ -65,6 +65,9 @@ Plug 'aklt/plantuml-syntax'
 
 Plug 'w0rp/ale'
 
+" ctags
+Plug 'szw/vim-tags'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""
@@ -107,6 +110,9 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
+
+" ctags
+let g:vim_tags_auto_generate = 1
 
 " tsuquyomi
 let g:tsuquyomi_javascript_support = 1
