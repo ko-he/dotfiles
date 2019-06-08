@@ -1,0 +1,53 @@
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# filer
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install.sh --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# themes
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme='powerlineish'
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# syntax
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'ianks/vim-tsx'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+depends = ['vim-javascript']
+
+[[plugins]]
+repo = 'posva/vim-vue'

@@ -1,24 +1,37 @@
+if &compatible
+  set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
+  let g:rc_dir    = expand("~/.config/nvim/")
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+""""""""""""""""""""""""""""""""
+" Themes
+""""""""""""""""""""""""""""""""
+syntax on
 set number
-""""""""""""""""""""""""""""""""
-" Init
-""""""""""""""""""""""""""""""""
-
-unlet! skip_defaults_vim
-
-scriptencoding utf-8
-set et ts=2 sw=0
-set encoding=utf-8
-
-
-""""""""""""""""""""""""""""""""
-" Plugin
-""""""""""""""""""""""""""""""""
-
-call plug#begin('~/.vim/plugged')
-
-" -- colors ----------------
-Plug 'joshdick/onedark.vim'
-
-call plug#end()
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 
 colorscheme onedark
+
