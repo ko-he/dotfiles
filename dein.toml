@@ -15,6 +15,9 @@ depends = 'fzf'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #
 # themes
@@ -38,6 +41,9 @@ repo = 'joshdick/onedark.vim'
 #
 # syntax
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'ianks/vim-tsx'
