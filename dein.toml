@@ -70,3 +70,13 @@ hook_add = '''
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 '''
+
+
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# LSP
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
