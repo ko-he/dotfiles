@@ -35,3 +35,6 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 
 colorscheme onedark
 
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}), <bang>0)
