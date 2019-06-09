@@ -29,7 +29,7 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
-let g:airline_theme='powerlineish'
+let g:airline_theme='term'
 let g:airline#extensions#tabline#enabled = 1
 '''
 
@@ -57,3 +57,16 @@ depends = ['vim-javascript']
 
 [[plugins]]
 repo = 'posva/vim-vue'
+
+
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# linter
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+'''
