@@ -11,12 +11,18 @@ merged = 0
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+hook_add = '''
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': 'ag --hidden --ignore .git -g ""'}), <bang>0)
+'''
+
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
 
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #
@@ -69,6 +75,24 @@ repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
+let g:ale_cache_executable_check_failures = 1
+let g:ale_open_list = 0
+let g:ale_set_highlights = 1
+let g:ale_linter_aliases = {
+\ 'javascript.jsx': ['css', 'javascript.jsx'],
+\ 'typescript': ['css', 'typescript']
+\}
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'javascript.jsx': ['stylelint', 'eslint'],
+\ 'typescript': ['stylelint', 'tslint'],
+\ 'ruby': ['rubocop'], 
+\ 'css': ['stylelint'], 
+\ 'scss': ['stylelint'], 
+\ 'sass': ['stylelint'], 
+\ 'nerdtree': ''
+\}
 '''
 
 
