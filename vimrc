@@ -104,6 +104,26 @@ set ttymouse=xterm2
 set clipboard+=unnamed
 let g:fzf_buffers_jump = 1
 
+let g:ale_cache_executable_check_failures = 1
+let g:ale_open_list = 0
+let g:ale_set_highlights = 1
+"let g:ale_linters_ignore = {'typescript': ['eslint']}
+let g:ale_linter_aliases = {
+\ 'javascript.jsx': ['css', 'javascript.jsx'],
+\ 'typescript': ['css', 'typescript']
+\}
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'javascript.jsx': ['stylelint', 'eslint'],
+\ 'typescript': ['stylelint', 'tslint'],
+\ 'ruby': ['rubocop'], 
+\ 'css': ['stylelint'], 
+\ 'scss': ['stylelint'], 
+\ 'sass': ['stylelint'], 
+\ 'nerdtree': ''
+\}
+
 " fzf
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)

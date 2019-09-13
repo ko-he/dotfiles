@@ -23,22 +23,17 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# Motion
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
 
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #
 # themes
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-let g:airline_theme='term'
-let g:airline#extensions#tabline#enabled = 1
-'''
-
 [[plugins]]
 repo = 'joshdick/onedark.vim'
 
@@ -64,6 +59,8 @@ depends = ['vim-javascript']
 [[plugins]]
 repo = 'posva/vim-vue'
 
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
 
 # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 #
@@ -104,3 +101,24 @@ let g:ale_linters = {
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
+
+
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+#
+# Tags
+# _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/j
+[[plugins]]
+repo = 'szw/vim-tags'
+hook_add = '''
+let g:vim_tags_auto_generate = 1
+let g:vim_tags_use_vim_dispatch = 0
+let g:vim_tags_use_language_field = 1
+let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore']
+let g:vim_tags_directories = [".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
+let g:vim_tags_main_file = 'tags'
+let g:vim_tags_extension = '.tags'
+let g:vim_tags_cache_dir = expand($HOME)
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'

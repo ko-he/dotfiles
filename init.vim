@@ -14,7 +14,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  let g:rc_dir    = expand("~/.config/nvim/")
+  let g:rc_dir    = expand("~/.config/nvim")
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
@@ -26,6 +26,14 @@ if dein#load_state('~/.cache/dein')
 endif
 
 """"""""""""""""""""""""""""""""
+" Base Config
+""""""""""""""""""""""""""""""""
+
+set clipboard+=unnamed
+set hlsearch
+set noswapfile
+
+""""""""""""""""""""""""""""""""
 " Themes
 """"""""""""""""""""""""""""""""
 syntax on
@@ -34,3 +42,32 @@ autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 
 colorscheme onedark
+
+""""""""""""""""""""""""""""""""
+" Key mapping
+""""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
+
+inoremap <S-Tab> <Esc>
+vmap <S-Tab> <Esc>
+map <C-n> :NERDTreeToggle<CR>
+map <Leader>p :Files<CR>
+map <Leader>b :Buffers<CR>
+map <Leader>a :Ag<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>l :bn<CR>
+map <Leader>h :bp<CR>
+nnoremap <silent><C-i> :call fzf#vim#tags(expand('<cword>'))<CR>
+nnoremap <silent><C-g> :call fzf#vim#ag(expand('<cword>'))<CR>
+nnoremap x "_x
+nnoremap X "_X
+nnoremap D "_D
+nnoremap <C-h> :UndotreeToggle<CR>
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <Leader>s <Plug>(easymotion-s2)
