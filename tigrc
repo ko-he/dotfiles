@@ -7,5 +7,5 @@ color  diff-chunk        black   white
 
 bind status <Ctrl-r> ?git reset --hard HEAD
 bind status <Ctrl-p> !git push origin %(branch)
-bind status <Ctrl-P> !git push -u origin %(branch)
+bind status <Ctrl-o> !git commit -m %{messge}
 bind generic <Ctrl-b> @hub browse
