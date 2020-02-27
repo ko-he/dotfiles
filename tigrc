@@ -5,7 +5,9 @@ set vertical-split = yes
 color  diff-header       default magenta
 color  diff-chunk        black   white
 
+bind status C ?git commit -m "%(prompt Enter commit message:)"
 bind status <Ctrl-r> ?git reset --hard HEAD
 bind status <Ctrl-p> !git push origin %(branch)
-bind status <Ctrl-o> !git commit -m %{messge}
-bind generic <Ctrl-b> @hub browse
+bind status <Ctrl-f> ?git commit --allow-empty -m "%(prompt Enter commit message:)"
+
+bind branch B ?git checkout -b "%(prompt Enter new branch name:)" %(branch)

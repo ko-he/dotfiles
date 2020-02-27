@@ -17,3 +17,7 @@ set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
+
+set -x PATH $GOPATH/bin $PATH
+
+set -x GITHUB_EDITOR nvim

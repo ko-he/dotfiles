@@ -48,15 +48,14 @@ colorscheme onedark
 """"""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 
-inoremap <S-Tab> <Esc>
 vmap <S-Tab> <Esc>
-map <C-n> :NERDTreeToggle<CR>
 map <Leader>p :Files<CR>
 map <Leader>b :Buffers<CR>
 map <Leader>a :Ag<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
+nmap <Leader>e :CocCommand explorer<CR>
 nnoremap <silent><C-i> :call fzf#vim#tags(expand('<cword>'))<CR>
 nnoremap <silent><C-g> :call fzf#vim#ag(expand('<cword>'))<CR>
 nnoremap x "_x
