@@ -20,4 +20,6 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
 
 set -x PATH $GOPATH/bin $PATH
 
-set -x GITHUB_EDITOR nvim
+set -x PATH $HOME/.flutter/bin $PATH
+
+set -x VISUAL nvim
